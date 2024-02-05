@@ -1,5 +1,5 @@
 class Player {
-  final String name;
+  String name;
   int xp;
 
   // Player(String name, int xp) {
@@ -7,10 +7,14 @@ class Player {
   //   this.xp = xp;
   // }
 
-  Player(this.name, this.xp);
+  // Player(this.name, this.xp);
+
+  Player.hello(this.name, this.xp){
+    print("Start Player_hello constructor");
+  }
 }
 
 void main() {
-  var player = Player('nico', 1500);
-  var player2 = Player('lynn', 2500);
+  // var player = Player('nico', 1500);
+  var player2 = Player.hello('lynn', 2500);
 }
