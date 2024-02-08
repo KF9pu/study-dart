@@ -9,7 +9,7 @@ class Player {
     required this.team,
   });
 
-  void sayHello(){
+  void sayHello() {
     print("Hi my name is $name");
   }
 }
@@ -17,8 +17,8 @@ class Player {
 void main() {
   var nico = Player(name: "nico", xp: 1200, team: 'red');
   var potato = nico
-  ..name = 'las'
-  ..xp = 120000
-  ..team = 'blue'
-  ..sayHello();
+    ..name = 'las'
+    ..xp = 120000
+    ..team = 'blue'
+    ..sayHello();
 }
