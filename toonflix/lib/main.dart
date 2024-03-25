@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/button.dart';
+import 'package:toonflix/widgets/currency_card.dart';
 
 void main() {
   runApp(const App());
@@ -10,20 +11,20 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-          backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+          backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
           body: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 28,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Column(
@@ -44,31 +45,31 @@ class App extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
-                  Text(
+                  const Text(
                     'Total Balance',
                     style: TextStyle(
                       color: Color.fromRGBO(128, 128, 128, 0.8),
                       fontSize: 16,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '\$5 194 382',
                     style: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 1),
                       fontSize: 28,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Button(
-                        text: "transfer",
+                        text: "Transfer",
                         bgColor: Color(0xFFF1B33B),
                         textColor: Colors.black,
                       ),
@@ -78,7 +79,58 @@ class App extends StatelessWidget {
                         textColor: Colors.white,
                       ),
                     ],
-                  )
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Wallets',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          'View All',
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                          ),
+                        ),
+                      ]),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const CurrencyCard(
+                    name: "Euro",
+                    code: "EUR",
+                    amount: '6 428',
+                    icon: Icons.euro_rounded,
+                    isInverted: false,
+                  ),
+                  Transform.translate(
+                    offset: const Offset(0, -10),
+                    child: const CurrencyCard(
+                      name: "Euro",
+                      code: "BTC",
+                      amount: '9 785',
+                      icon: Icons.currency_bitcoin,
+                      isInverted: true,
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: const Offset(0, -20),
+                    child: const CurrencyCard(
+                      name: "Euro",
+                      code: "BTC",
+                      amount: '9 785',
+                      icon: Icons.attach_money_outlined,
+                      isInverted: false,
+                    ),
+                  ),
                 ],
               ))),
     );
